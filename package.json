@@ -1,0 +1,50 @@
+{
+  "name": "frontend-tools",
+  "description": "Frontend Tools is a colecction of tools that are commonly used in frontend web development such as gradient editor, shadow generator, etc.",
+  "repository": {
+    "url": "https://github.com/faustinozanetto/frontend-tools",
+    "type": "git"
+  },
+  "keywords": [
+    "frontend",
+    "tools"
+  ],
+  "author": {
+    "name": "Faustino Zanetto",
+    "email": "zanettofaustino@gmail.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start:dev": "next",
+    "start:prod": "next start",
+    "build": "next build",
+    "docker:build": "docker build -t faustizanetto/toply:latest .",
+    "docker:run": "docker-compose up",
+    "docker:start": "docker run -p 3000:3000 -e NODE_ENV=development faustizanetto/toply:latest",
+    "eslint": "next lint --fix --dir src",
+    "prettier": "prettier -l \"src/**/*.{js,jsx,md,ts,tsx}\"",
+    "lint": "yarn prettier && yarn eslint"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix --cache-location ./node_modules/.cache/.eslintcache"
+  },
+  "dependencies": {
+    "cssnano": "^5.1.13",
+    "framer-motion": "^7.2.0",
+    "next": "^12.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.8",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "autoprefixer": "^10.4.8",
+    "eslint": "8.22.0",
+    "eslint-config-next": "12.2.5",
+    "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
+    "tailwindcss": "^3.1.8",
+    "typescript": "4.7.4"
+  }
+}

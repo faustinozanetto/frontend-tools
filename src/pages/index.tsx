@@ -1,5 +1,15 @@
+import Layout from '@modules/layout/components/layout';
+
 const HomePage: React.FC = () => {
-  return <h1>hi</h1>;
+  return (
+    <Layout
+      headProps={{
+        title: 'Home | Frontend Tools',
+      }}
+    >
+      <h1 className="font-sans text-2xl font-bold">Frontend Tools</h1>
+    </Layout>
+  );
 };
 
 export default HomePage;

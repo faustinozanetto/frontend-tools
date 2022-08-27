@@ -16,7 +16,7 @@ const Layout: React.FC<ILayoutProps> = (props) => {
       {/* SEO Head */}
       <LayoutHead {...headProps} />
 
-      <main className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
+      <main className="max-w-8xl mx-auto p-4 sm:p-6 md:p-8">
         {/* Children */}
         {children}
       </main>

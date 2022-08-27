@@ -1,4 +1,7 @@
+import React from 'react';
+
 import Layout from '@modules/layout/components/layout';
+import HomeView from '@views/home/home-view';
 
 const HomePage: React.FC = () => {
   return (
@@ -7,9 +10,7 @@ const HomePage: React.FC = () => {
         title: 'Home | Frontend Tools',
       }}
     >
-      <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200">
-        Frontend Tools
-      </h1>
+      <HomeView />
     </Layout>
   );
 };

@@ -12,11 +12,11 @@ const Layout: React.FC<ILayoutProps> = (props) => {
   const { children, headProps } = props;
 
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden subpixel-antialiased transition-all">
+    <div className="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden">
       {/* SEO Head */}
       <LayoutHead {...headProps} />
 
-      <main className="max-w-xl mx-auto w-full">
+      <main className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Children */}
         {children}
       </main>

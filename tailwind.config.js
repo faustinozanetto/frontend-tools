@@ -1,14 +1,26 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: ['./src/modules/**/*.{js,jsx,ts,tsx}', './src/pages/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        mono: ['Fira Code VF', ...defaultTheme.fontFamily.mono],
+        source: ['Source Sans Pro', ...defaultTheme.fontFamily.sans],
+        'ubuntu-mono': ['Ubuntu Mono', ...defaultTheme.fontFamily.mono],
+      },
       screens: {
         xs: '320px',
         sm: '640px',
         md: '768px',
         lg: '1024px',
         xl: '1280px',
+      },
+      maxWidth: {
+        '8xl': '90rem',
       },
       fontSize: {
         xs: '.75rem',

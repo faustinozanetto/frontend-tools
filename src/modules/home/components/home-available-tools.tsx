@@ -5,12 +5,12 @@ const TOOLS: ToolData[] = [
   {
     name: 'Shadow Generator',
     description: 'Create beautiful and clean shadows with this generator in just a few steps.',
-    path: '/tools/shadow-generator',
+    path: '/tools/generators/shadow',
   },
   {
     name: 'Gradient Generator',
     description: 'Create stunning gradients with a few steps and make your websiste stand out.',
-    path: '/tools/gradient-generator',
+    path: '/tools/generators/gradient',
   },
   {
     name: 'Shadows Collection',

@@ -1,3 +1,4 @@
+import Footer from '@modules/footer/components/footer';
 import Navbar from '@modules/navbar/components/navbar';
 import React from 'react';
 import LayoutHead from './layout-head';
@@ -25,6 +26,9 @@ const Layout: React.FC<ILayoutProps> = (props) => {
         {/* Children */}
         {children}
       </div>
+
+      {/* Footer */}
+      <Footer />
     </main>
   );
 };

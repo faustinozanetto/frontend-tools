@@ -1,3 +1,4 @@
+import Navbar from '@modules/navbar/components/navbar';
 import React from 'react';
 import LayoutHead from './layout-head';
 
@@ -12,15 +13,19 @@ const Layout: React.FC<ILayoutProps> = (props) => {
   const { children, headProps } = props;
 
   return (
-    <div className="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden">
+    <main>
       {/* SEO Head */}
       <LayoutHead {...headProps} />
 
-      <main className="max-w-4xl mx-auto p-4 sm:p-6 md:p-8">
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Content */}
+      <div className="max-w-4xl mx-auto p-4 sm:p-6 md:p-8">
         {/* Children */}
         {children}
-      </main>
-    </div>
+      </div>
+    </main>
   );
 };
 

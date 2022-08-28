@@ -14,10 +14,6 @@ const HomeView: React.FC = () => {
           Welcome to FrotendTools, the all in one place for the most commonly used tools in web development.
         </p>
       </div>
-      {/* Learn more button */}
-      <div className="flex items-center justify-center w-full h-full">
-        <Button>Learn More</Button>
-      </div>
       {/* Available Tools */}
       <HomeAvailableTools />
     </div>

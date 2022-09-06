@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from '@modules/layout/components/layout';
+import Layout from '@modules/common/layout/components/layout';
 import ShadowGeneratorView from '@views/tools/generators/shadow-generator-view';
 
 const ShadowGeneratorPage: React.FC = () => {

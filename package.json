@@ -28,6 +28,11 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix --cache-location ./node_modules/.cache/.eslintcache"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "cssnano": "^5.1.13",
     "framer-motion": "^7.2.1",
@@ -36,12 +41,29 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^18.7.13",
-    "@types/react": "^18.0.17",
+    "@types/node": "^18.7.15",
+    "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "autoprefixer": "^10.4.8",
-    "eslint": "8.22.0",
-    "eslint-config-next": "12.2.5",
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-next": "^12.2.5",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^27.0.1",
+    "eslint-plugin-jest-dom": "^4.0.2",
+    "eslint-plugin-jest-formatting": "^3.1.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.7",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-tailwindcss": "^3.6.1",
+    "eslint-plugin-testing-library": "^5.6.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "lint-staged": "^13.0.3",
+    "husky": "^8.0.1",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.1.8",

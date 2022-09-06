@@ -1,5 +1,5 @@
-import Footer from '@modules/footer/components/footer';
-import Navbar from '@modules/navbar/components/navbar';
+import Footer from '@modules/common/footer/components/footer';
+import Navbar from '@modules/common/navbar/components/navbar';
 import React from 'react';
 import LayoutHead from './layout-head';
 
@@ -14,7 +14,7 @@ const Layout: React.FC<ILayoutProps> = (props) => {
   const { children, headProps } = props;
 
   return (
-    <main>
+    <main className="flex min-h-screen justify-between flex-col overflow-hidden font-poppins subpixel-antialiased transition-all">
       {/* SEO Head */}
       <LayoutHead {...headProps} />
 

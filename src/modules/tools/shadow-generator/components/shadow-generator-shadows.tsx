@@ -1,14 +1,14 @@
 import React from 'react';
 import useShadowGeneratorContext from '../hooks/use-shadow-generator-context';
-import ShadowGeneratorEdit from './shadow-generator-edit';
+import ShadowGeneratorEdit from './edit/shadow-generator-edit';
 
 const ShadowGeneratorShadows: React.FC = () => {
   const { shadows } = useShadowGeneratorContext();
 
   return (
-    <div>
+    <div className="flex flex-col space-y-2">
       {shadows.map((shadow) => (
-        <ShadowGeneratorEdit shadow={shadow} />
+        <ShadowGeneratorEdit key={shadow.id} shadow={shadow} />
       ))}
     </div>
   );

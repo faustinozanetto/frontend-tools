@@ -5,12 +5,14 @@ import { ShadowData } from '../types/shadow-generator.types';
 export interface IShadowGeneratorContextProps {
   shadows: ShadowData[];
   addShadow: (shadow: ShadowData) => void;
+  updateShadow: (shadow: ShadowData) => void;
   removeShadow: (shadowId: string) => void;
 }
 
 const initialState: IShadowGeneratorContextProps = {
   shadows: [],
   addShadow: (_shadow: ShadowData) => {},
+  updateShadow: (_shadow: ShadowData) => {},
   removeShadow: (_shadowId: string) => {},
 };
 
@@ -29,13 +31,18 @@ const ShadowGeneratorProvider: React.FC<IShadowGeneratorProviderProps> = ({ chil
     }
   };
 
+  const updateShadow = (shadow: ShadowData) => {
+    const updatedShadows = internalShadows.map((mShadow) => (mShadow.id === shadow.id ? shadow : mShadow));
+    setInternalShadows(updatedShadows);
+  };
+
   const removeShadow = (shadowId: string) => {
     setInternalShadows((prevShadows) => {
       return prevShadows.filter((shadow) => shadow.id !== shadowId);
     });
   };
 
-  const value = useMemo(() => ({ shadows: internalShadows, addShadow, removeShadow }), [internalShadows]);
+  const value = useMemo(() => ({ shadows: internalShadows, addShadow, updateShadow, removeShadow }), [internalShadows]);
 
   return <ShadowGeneratorContext.Provider value={value}>{children}</ShadowGeneratorContext.Provider>;
 };

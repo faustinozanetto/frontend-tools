@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
               <span className="font-bold text-2xl text-black">Frontend Tools</span>
             </div>
             {/* Links */}
-            <div className='relative hidden lg:flex items-center ml-auto'></div>
+            <div className="relative hidden lg:flex items-center ml-auto"></div>
           </div>
         </div>
       </div>

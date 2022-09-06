@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { createContext, useState } from 'react';
 import { ShadowData } from '../types/shadow-generator.types';
 
-interface IShadowGeneratorContextProps {
+export interface IShadowGeneratorContextProps {
   shadows: ShadowData[];
   addShadow: (shadow: ShadowData) => void;
   removeShadow: (shadowId: string) => void;
@@ -10,35 +10,34 @@ interface IShadowGeneratorContextProps {
 
 const initialState: IShadowGeneratorContextProps = {
   shadows: [],
-  addShadow: () => {},
-  removeShadow: () => {},
+  addShadow: (_shadow: ShadowData) => {},
+  removeShadow: (_shadowId: string) => {},
 };
 
-const ShadowGeneratorContext = createContext<IShadowGeneratorContextProps>(initialState);
+export const ShadowGeneratorContext = createContext<IShadowGeneratorContextProps>(initialState);
 
 interface IShadowGeneratorProviderProps {
   children: React.ReactNode;
 }
 
 const ShadowGeneratorProvider: React.FC<IShadowGeneratorProviderProps> = ({ children }) => {
-  const [shadows, setShadows] = useState<ShadowData[]>([]);
+  const [internalShadows, setInternalShadows] = useState<ShadowData[]>([]);
 
   const addShadow = (shadow: ShadowData) => {
-    if (shadows.find((shadow) => shadow.id === shadow.id)) return;
-    setShadows((prevShadows) => [...prevShadows, shadow]);
+    if (!internalShadows.includes(shadow)) {
+      setInternalShadows((prevShadows) => [...prevShadows, shadow]);
+    }
   };
 
   const removeShadow = (shadowId: string) => {
-    setShadows((prevShadows) => {
-      return prevShadows.filter((shadow) => shadow.id === shadowId);
+    setInternalShadows((prevShadows) => {
+      return prevShadows.filter((shadow) => shadow.id !== shadowId);
     });
   };
 
-  return (
-    <ShadowGeneratorContext.Provider value={{ shadows, addShadow, removeShadow }}>
-      {children}
-    </ShadowGeneratorContext.Provider>
-  );
+  const value = useMemo(() => ({ shadows: internalShadows, addShadow, removeShadow }), [internalShadows]);
+
+  return <ShadowGeneratorContext.Provider value={value}>{children}</ShadowGeneratorContext.Provider>;
 };
 
 export default ShadowGeneratorProvider;

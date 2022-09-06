@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { defaultShadow, ShadowData } from '../types/shadow-generator.types';
+import { ShadowData } from '../types/shadow-generator.types';
 import {
   MAX_BLUR_RADIUS,
   MAX_H_OFFSET,
@@ -11,8 +11,8 @@ import {
   MIN_V_OFFSET,
 } from '../utils/shadow-generator-constants';
 
-const useShadowCreator = () => {
-  const [shadow, setShadow] = useState<ShadowData>(defaultShadow);
+const useShadowCreator = (entryShadow: ShadowData) => {
+  const [shadow, setShadow] = useState<ShadowData>(entryShadow);
 
   const setShadowVerticalOffset = (offset: number) => {
     if (offset < MIN_V_OFFSET || offset > MAX_V_OFFSET) return;
@@ -50,7 +50,29 @@ const useShadowCreator = () => {
     });
   };
 
-  return { shadow, setShadowVerticalOffset, setShadowHorizontalOffset, setShadowBlurRadius, setShadowSpreadRadius };
+  const setShadowColor = (color: string) => {
+    setShadow((prev) => {
+      const updatedShadow: ShadowData = { ...prev, color };
+      return updatedShadow;
+    });
+  };
+
+  const setShadowIsInset = (inset: boolean) => {
+    setShadow((prev) => {
+      const updatedShadow: ShadowData = { ...prev, inset };
+      return updatedShadow;
+    });
+  };
+
+  return {
+    shadow,
+    setShadowVerticalOffset,
+    setShadowHorizontalOffset,
+    setShadowBlurRadius,
+    setShadowSpreadRadius,
+    setShadowColor,
+    setShadowIsInset,
+  };
 };
 
 export default useShadowCreator;

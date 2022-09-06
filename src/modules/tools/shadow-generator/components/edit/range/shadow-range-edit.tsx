@@ -33,7 +33,6 @@ const ShadowRangeEdit: React.FC<IShadowRangeEditProps> = (props) => {
       <input
         id={label}
         type="range"
-        defaultValue={defaultValue}
         onChange={handleSliderChange}
         value={value}
         min={min}

@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
-
 export type ShadowData = {
   id: string;
   horizontalOffset: number;
@@ -11,7 +9,7 @@ export type ShadowData = {
 };
 
 export const defaultShadow: ShadowData = {
-  id: uuidv4(),
+  id: '1',
   horizontalOffset: 0,
   verticalOffset: 10,
   blurRadius: 15,

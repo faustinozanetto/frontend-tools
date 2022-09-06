@@ -24,9 +24,12 @@ const ShadowRangeEdit: React.FC<IShadowRangeEditProps> = (props) => {
 
   return (
     <React.Fragment>
-      <label htmlFor={label} className="block mb-2 text-sm font-medium text-gray-900">
-        {label}
-      </label>
+      <div className="flex flex-row justify-between">
+        <label htmlFor={label} className="font-semibold text-gray-800">
+          {label}
+        </label>
+        <span className="text-sm">{value}px</span>
+      </div>
       <input
         id={label}
         type="range"
@@ -35,7 +38,7 @@ const ShadowRangeEdit: React.FC<IShadowRangeEditProps> = (props) => {
         value={value}
         min={min}
         max={max}
-        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+        className="w-full bg-gray-200 rounded-lg appearance-none cursor-pointer"
       />
     </React.Fragment>
   );

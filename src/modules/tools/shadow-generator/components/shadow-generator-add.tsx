@@ -1,18 +1,13 @@
 import Button from '@modules/ui/components/button/button';
-import { v4 as uuidv4 } from 'uuid';
 import React, { useContext } from 'react';
-import { defaultShadow, ShadowData } from '../types/shadow-generator.types';
+import { defaultShadow } from '../types/shadow-generator.types';
 import { IShadowGeneratorContextProps, ShadowGeneratorContext } from '../context/shadow-generator-context';
 
 const ShadowGeneratorAdd: React.FC = () => {
   const { addShadow } = useContext<IShadowGeneratorContextProps>(ShadowGeneratorContext);
 
   const handleShadowAdd = () => {
-    const shadow: ShadowData = {
-      id: uuidv4(),
-      ...defaultShadow,
-    };
-    addShadow(shadow);
+    addShadow(defaultShadow);
   };
 
   return (

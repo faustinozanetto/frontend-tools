@@ -7,9 +7,7 @@ const ShadowGeneratorShadows: React.FC = () => {
 
   return (
     <div className="flex flex-col space-y-2">
-      {shadows.map((shadow) => (
-        <ShadowGeneratorEdit key={shadow.id} shadow={shadow} />
-      ))}
+      {shadows && shadows.map((shadow) => <ShadowGeneratorEdit key={shadow.id} shadowId={shadow.id!} />)}
     </div>
   );
 };

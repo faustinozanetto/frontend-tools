@@ -13,7 +13,9 @@ const useShadowResults = (shadows: ShadowData[]) => {
       const spreadRadius: string = shadow.spreadRadius ? `${shadow.spreadRadius}px` : '';
       const color: string = shadow.color ? shadow.color : '';
       const separator: string = index >= 0 && index < shadows.length - 1 ? ',' : '';
-      return inset + xOffset + ' ' + yOffset + ' ' + blurRadius + ' ' + spreadRadius + ' ' + color + ' ' + separator;
+      return (
+        inset + ' ' + xOffset + ' ' + yOffset + ' ' + blurRadius + ' ' + spreadRadius + ' ' + color + ' ' + separator
+      );
     });
     return genereatedShadows.join('').trim();
   };

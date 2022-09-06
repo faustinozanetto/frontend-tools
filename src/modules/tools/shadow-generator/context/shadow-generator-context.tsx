@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { createContext, useState } from 'react';
-import { ShadowData } from '../types/shadow-generator.types';
+import { defaultShadow, ShadowData } from '../types/shadow-generator.types';
 
 export interface IShadowGeneratorContextProps {
   shadows: ShadowData[];
@@ -10,7 +10,7 @@ export interface IShadowGeneratorContextProps {
 }
 
 const initialState: IShadowGeneratorContextProps = {
-  shadows: [],
+  shadows: [defaultShadow],
   addShadow: (_shadow: ShadowData) => {},
   updateShadow: (_shadow: ShadowData) => {},
   removeShadow: (_shadowId: string) => {},
@@ -23,7 +23,7 @@ interface IShadowGeneratorProviderProps {
 }
 
 const ShadowGeneratorProvider: React.FC<IShadowGeneratorProviderProps> = ({ children }) => {
-  const [internalShadows, setInternalShadows] = useState<ShadowData[]>([]);
+  const [internalShadows, setInternalShadows] = useState<ShadowData[]>(initialState.shadows);
 
   const addShadow = (shadow: ShadowData) => {
     if (!internalShadows.includes(shadow)) {

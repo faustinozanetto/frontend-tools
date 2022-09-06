@@ -12,7 +12,7 @@ interface IShadowRangeEditProps {
 const ShadowRangeEdit: React.FC<IShadowRangeEditProps> = (props) => {
   const { label, defaultValue, min, max, onChange } = props;
   const [value, setValue] = useState<number>(defaultValue);
-  const debouncedValue = useDebounce<number>(value, 100);
+  const debouncedValue = useDebounce<number>(value, 20);
 
   const handleSliderChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(Number(event.target.value));

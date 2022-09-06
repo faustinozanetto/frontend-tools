@@ -10,7 +10,7 @@ interface IShadowBooleanEditProps {
 const ShadowBooleanEdit: React.FC<IShadowBooleanEditProps> = (props) => {
   const { label, defaultValue, onChange } = props;
   const [value, setValue] = useState<boolean>(defaultValue);
-  const debouncedValue = useDebounce<boolean>(value, 100);
+  const debouncedValue = useDebounce<boolean>(value, 20);
 
   const handleSliderChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(Boolean(event.target.checked));

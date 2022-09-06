@@ -10,10 +10,10 @@ export type ShadowData = {
 
 export const defaultShadow: ShadowData = {
   id: '1',
-  horizontalOffset: 0,
-  verticalOffset: 10,
-  blurRadius: 15,
-  spreadRadius: -4,
-  color: 'rgba(0,0,0,0.15)',
+  horizontalOffset: 40,
+  verticalOffset: 20,
+  blurRadius: 70,
+  spreadRadius: -20,
+  color: '#0eccff8f',
   inset: false,
 };

@@ -14,7 +14,7 @@ const Layout: React.FC<ILayoutProps> = (props) => {
   const { children, headProps } = props;
 
   return (
-    <main className="flex min-h-screen justify-between flex-col overflow-hidden font-poppins subpixel-antialiased transition-all">
+    <main className="flex min-h-screen flex-col overflow-hidden font-poppins subpixel-antialiased transition-all">
       {/* SEO Head */}
       <LayoutHead {...headProps} />
 
@@ -22,7 +22,7 @@ const Layout: React.FC<ILayoutProps> = (props) => {
       <Navbar />
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto p-4 sm:p-6 md:p-8">
+      <div className="max-w-4xl mx-auto mb-auto p-4 sm:p-6 md:p-8">
         {/* Children */}
         {children}
       </div>

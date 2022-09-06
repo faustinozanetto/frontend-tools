@@ -1,3 +1,4 @@
+import ShadowGenerator from '@modules/tools/shadow-generator/components/shadow-generator';
 import React from 'react';
 
 const ShadowGeneratorView: React.FC = () => {
@@ -9,9 +10,11 @@ const ShadowGeneratorView: React.FC = () => {
           Shadow Generator
         </h1>
         <p className="text-xl sm:text-2xl font-normal text-slate-900">
-          Welcome to FrotendTools, the all in one place for the most commonly used tools in web development.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis error consequatur sapiente! Similique, quo.
+          Similique.
         </p>
       </div>
+      <ShadowGenerator />
     </div>
   );
 };

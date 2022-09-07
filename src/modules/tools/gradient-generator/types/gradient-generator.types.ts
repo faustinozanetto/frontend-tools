@@ -11,5 +11,7 @@ export type GradientColor = {
 
 export type GradientData = {
   type: GradientType;
+  maxColors: number;
   colors: GradientColor[];
+  radialRotation: number;
 };

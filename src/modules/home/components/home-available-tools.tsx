@@ -15,12 +15,12 @@ const TOOLS: ToolData[] = [
   {
     name: 'Shadows Collection',
     description: 'A collection of simple and ellegant drop shadows to enhance your website.',
-    path: '/collections/shadows',
+    path: '/tools/collections/shadow',
   },
   {
     name: 'Gradients Collection',
     description: 'A collection of hand crafted and beautiful gradients ready to make your website look amazing.',
-    path: '/collections/gradients',
+    path: '/tools/collections/gradients',
   },
 ];
 

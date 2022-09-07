@@ -14,7 +14,7 @@ import {
 const useShadowCreator = (entryShadow: ShadowData) => {
   const [shadow, setShadow] = useState<ShadowData>(entryShadow);
 
-  const setShadowVerticalOffset = (offset: number) => {
+  const setShadowVerticalOffset = (offset: ShadowData['verticalOffset']) => {
     if (offset < MIN_V_OFFSET || offset > MAX_V_OFFSET) return;
 
     setShadow((prev) => {
@@ -23,7 +23,7 @@ const useShadowCreator = (entryShadow: ShadowData) => {
     });
   };
 
-  const setShadowHorizontalOffset = (offset: number) => {
+  const setShadowHorizontalOffset = (offset: ShadowData['horizontalOffset']) => {
     if (offset < MIN_H_OFFSET || offset > MAX_H_OFFSET) return;
 
     setShadow((prev) => {
@@ -32,7 +32,7 @@ const useShadowCreator = (entryShadow: ShadowData) => {
     });
   };
 
-  const setShadowBlurRadius = (radius: number) => {
+  const setShadowBlurRadius = (radius: ShadowData['blurRadius']) => {
     if (radius < MIN_BLUR_RADIUS || radius > MAX_BLUR_RADIUS) return;
 
     setShadow((prev) => {
@@ -41,7 +41,7 @@ const useShadowCreator = (entryShadow: ShadowData) => {
     });
   };
 
-  const setShadowSpreadRadius = (radius: number) => {
+  const setShadowSpreadRadius = (radius: ShadowData['spreadRadius']) => {
     if (radius < MIN_SPREAD_RADIUS || radius > MAX_SPREAD_RADIUS) return;
 
     setShadow((prev) => {
@@ -50,14 +50,14 @@ const useShadowCreator = (entryShadow: ShadowData) => {
     });
   };
 
-  const setShadowColor = (color: string) => {
+  const setShadowColor = (color: ShadowData['color']) => {
     setShadow((prev) => {
       const updatedShadow: ShadowData = { ...prev, color };
       return updatedShadow;
     });
   };
 
-  const setShadowIsInset = (inset: boolean) => {
+  const setShadowIsInset = (inset: ShadowData['inset']) => {
     setShadow((prev) => {
       const updatedShadow: ShadowData = { ...prev, inset };
       return updatedShadow;

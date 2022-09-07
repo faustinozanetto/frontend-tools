@@ -9,6 +9,7 @@ const Footer: React.FC = () => {
         <FooterLink href="/">Home</FooterLink>
         <FooterLink href="/privacy">Privacy</FooterLink>
         <FooterLink href="/about">About</FooterLink>
+        <FooterLink href="/terms">Terms</FooterLink>
       </div>
     </footer>
   );

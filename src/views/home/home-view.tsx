@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeAvailableTools from '@modules/home/components/home-available-tools';
+import HomeLatestNews from '@modules/home/components/news/home-latests-news';
 
 const HomeView: React.FC = () => {
   return (
@@ -15,6 +16,8 @@ const HomeView: React.FC = () => {
       </div>
       {/* Available Tools */}
       <HomeAvailableTools />
+      {/* Latests news */}
+      <HomeLatestNews />
     </div>
   );
 };

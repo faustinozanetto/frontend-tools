@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HexAlphaColorPicker } from 'react-colorful';
+import { HslaStringColorPicker } from 'react-colorful';
 import useDebounce from 'src/hooks/use-debounce';
 
 interface IShadowColorEditProps {
@@ -24,7 +24,7 @@ const ShadowColorEdit: React.FC<IShadowColorEditProps> = (props) => {
     <div className="flex flex-col justify-center">
       <span className="text-lg font-semibold text-gray-800">Color</span>
       <div className="color-picker">
-        <HexAlphaColorPicker color={color} onChange={handleShadowColorUpdate} />
+        <HslaStringColorPicker color={color} onChange={handleShadowColorUpdate} />
       </div>
     </div>
   );

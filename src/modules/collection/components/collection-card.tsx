@@ -30,11 +30,11 @@ const CollectionCard: React.FC<ICollectionCardProps> = (props) => {
         delay: index * 0.1,
         staggerChildren: 0.15,
       }}
-      className="relative m-4 bg-white rounded-lg border border-gray-200 h-[200px]"
+      className="relative m-4 bg-white rounded-xl h-[200px]"
       style={style}
     >
       <div className="absolute items-center bottom-0 flex justify-between w-full p-2">
-        <span className="font-bold text-gray-900 opacity-80">{`#${index}`}</span>
+        <span className="font-bold text-lg text-gray-900 opacity-80">{`#${index}`}</span>
         <Button size="sm">
           <svg
             xmlns="http://www.w3.org/2000/svg"

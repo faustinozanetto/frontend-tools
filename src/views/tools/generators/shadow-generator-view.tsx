@@ -1,7 +1,19 @@
-import ShadowGenerator from '@modules/tools/shadow-generator/components/shadow-generator';
-import React from 'react';
+import React, { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+
+const ShadowGenerator = dynamic(() => import('@modules/tools/shadow-generator/components/shadow-generator'), {
+  suspense: true,
+});
 
 const ShadowGeneratorView: React.FC = () => {
+  const shadowGeneratorFallback = (): React.ReactNode => {
+    return (
+      <div className="flex items-center justify-center">
+        <span className="font-bold text-2xl text-gray-800">Loading...</span>
+      </div>
+    );
+  };
+
   return (
     <div className="flex flex-col space-y-4 sm:space-y-6">
       {/* Heading */}
@@ -15,7 +27,9 @@ const ShadowGeneratorView: React.FC = () => {
         </p>
       </div>
       {/* Main Component */}
-      <ShadowGenerator />
+      <Suspense fallback={shadowGeneratorFallback()}>
+        <ShadowGenerator />
+      </Suspense>
     </div>
   );
 };

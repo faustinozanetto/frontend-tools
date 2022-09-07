@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
           <div className="relative flex items-center">
             {/* Logo */}
             <div className="mr-3 flex-none overflow-hidden md:w-auto">
-              <span className="font-bold text-2xl text-black">Frontend Tools</span>
+              <span className="font-bold text-3xl text-violet-600">Frontend Tools</span>
             </div>
             {/* Links */}
             <div className="relative hidden lg:flex items-center ml-auto"></div>

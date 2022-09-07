@@ -1,7 +1,6 @@
-import { Transition } from '@headlessui/react';
+import React from 'react';
 import Button from '@modules/ui/components/button/button';
 import { motion } from 'framer-motion';
-import React from 'react';
 import { ShadowCollectionData } from '../../types/shadow-collection.types';
 
 interface IShadowCollectionCardProps {
@@ -31,7 +30,7 @@ const ShadowCollectionCard: React.FC<IShadowCollectionCardProps> = (props) => {
         delay: Number(shadow.id) * 0.1,
         staggerChildren: 0.15,
       }}
-      className="relative bg-white rounded-lg border border-gray-200 h-[200px] w-[200px]"
+      className="relative m-4 bg-white rounded-lg border border-gray-200 h-[200px]"
       style={{ boxShadow: shadow.shadowStyle }}
     >
       <div className="absolute items-center bottom-0 flex justify-between w-full p-2">

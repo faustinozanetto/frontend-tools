@@ -23,7 +23,9 @@ const ShadowColorEdit: React.FC<IShadowColorEditProps> = (props) => {
   return (
     <div className="flex flex-col justify-center">
       <span className="text-lg font-semibold text-gray-800">Color</span>
-      <HexAlphaColorPicker color={color} onChange={handleShadowColorUpdate} />
+      <div className="color-picker">
+        <HexAlphaColorPicker color={color} onChange={handleShadowColorUpdate} />
+      </div>
     </div>
   );
 };

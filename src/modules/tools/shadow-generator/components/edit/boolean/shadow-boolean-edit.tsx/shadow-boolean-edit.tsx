@@ -21,7 +21,7 @@ const ShadowBooleanEdit: React.FC<IShadowBooleanEditProps> = (props) => {
   }, [debouncedValue]);
 
   return (
-    <div className="flex flex-row justify-between items-center">
+    <div className="flex flex-row justify-between items-center space-x-2">
       <label htmlFor={label} className="font-semibold text-gray-800">
         {label}
       </label>

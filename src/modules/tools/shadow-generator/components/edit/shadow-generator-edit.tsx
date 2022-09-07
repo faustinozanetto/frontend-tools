@@ -8,7 +8,10 @@ const ShadowGeneratorEdit: React.FC = () => {
 
   return (
     <div className="flex flex-col bg-gray-100 p-4 rounded-lg space-y-2 sm:space-y-4">
-      <ShadowGeneratorAdd />
+      <div className="flex flex-row justify-between items-center">
+        <h3 className="text-2xl font-bold text-gray-900">Editor</h3>
+        <ShadowGeneratorAdd />
+      </div>
       {shadows.length > 0 && (
         <div className="flex flex-col space-y-2">
           {shadows.map((shadow) => (

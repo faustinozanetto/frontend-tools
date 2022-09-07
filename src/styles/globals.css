@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.react-colorful {
+.color-picker .react-colorful {
   width: auto;
 }

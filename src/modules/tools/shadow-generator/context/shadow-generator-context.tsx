@@ -6,14 +6,14 @@ export interface IShadowGeneratorContextProps {
   shadows: ShadowData[];
   addShadow: (shadow: ShadowData) => void;
   updateShadow: (shadow: ShadowData) => void;
-  removeShadow: (shadowId: string) => void;
+  removeShadow: (shadowId: ShadowData['id']) => void;
 }
 
 const initialState: IShadowGeneratorContextProps = {
   shadows: [defaultShadow],
   addShadow: (_shadow: ShadowData) => {},
   updateShadow: (_shadow: ShadowData) => {},
-  removeShadow: (_shadowId: string) => {},
+  removeShadow: (_shadowId: ShadowData['id']) => {},
 };
 
 export const ShadowGeneratorContext = createContext<IShadowGeneratorContextProps>(initialState);
@@ -36,7 +36,7 @@ const ShadowGeneratorProvider: React.FC<IShadowGeneratorProviderProps> = ({ chil
     setInternalShadows(updatedShadows);
   };
 
-  const removeShadow = (shadowId: string) => {
+  const removeShadow = (shadowId: ShadowData['id']) => {
     setInternalShadows((prevShadows) => {
       return prevShadows.filter((shadow) => shadow.id !== shadowId);
     });

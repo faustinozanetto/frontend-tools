@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import React, { useEffect } from 'react';
 import useShadowCreator from '../../hooks/use-shadow-creator';
 import useShadowGeneratorContext from '../../hooks/use-shadow-generator-context';
-import { defaultShadow } from '../../types/shadow-generator.types';
+import { defaultShadow, ShadowData } from '../../types/shadow-generator.types';
 import {
   MAX_BLUR_RADIUS,
   MAX_H_OFFSET,
@@ -20,7 +20,7 @@ import ShadowRangeEdit from './range/shadow-range-edit';
 import ShadowGeneratorDelete from './shadow-generator-delete';
 
 interface IShadowGeneratorEntryProps {
-  shadowId: string;
+  shadowId: ShadowData['id'];
 }
 
 const ShadowGeneratorEntry: React.FC<IShadowGeneratorEntryProps> = (props) => {

@@ -1,9 +1,10 @@
 import Button from '@modules/ui/components/button/button';
 import React, { useContext } from 'react';
 import { IShadowGeneratorContextProps, ShadowGeneratorContext } from '../../context/shadow-generator-context';
+import { ShadowData } from '../../types/shadow-generator.types';
 
 interface IShadowGeneratorDeleteProps {
-  shadowId: string;
+  shadowId: ShadowData['id'];
 }
 
 const ShadowGeneratorDelete: React.FC<IShadowGeneratorDeleteProps> = (props) => {

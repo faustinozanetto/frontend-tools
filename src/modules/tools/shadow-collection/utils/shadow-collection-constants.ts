@@ -26,4 +26,17 @@ export const SHADOW_COLLECTION: ShadowCollectionData[] = [
     id: '6',
     shadowStyle: 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;',
   },
+  {
+    id: '7',
+    shadowStyle:
+      'rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;',
+  },
+  {
+    id: '8',
+    shadowStyle: 'rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;',
+  },
+  {
+    id: '9',
+    shadowStyle: 'rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;',
+  },
 ];

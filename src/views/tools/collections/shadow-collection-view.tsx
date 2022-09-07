@@ -10,8 +10,7 @@ const ShadowCollectionView: React.FC = () => {
           Shadows Collection
         </h1>
         <p className="text-xl sm:text-2xl font-normal text-slate-900">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis error consequatur sapiente! Similique, quo.
-          Similique.
+          Browse a curated collection of hand generated box shadows for your projects.
         </p>
       </div>
       {/* Main Component */}

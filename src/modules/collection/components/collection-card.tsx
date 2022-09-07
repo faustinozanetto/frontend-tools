@@ -1,14 +1,14 @@
 import React from 'react';
 import Button from '@modules/ui/components/button/button';
 import { motion } from 'framer-motion';
-import { ShadowCollectionData } from '../../types/shadow-collection.types';
 
-interface IShadowCollectionCardProps {
-  shadow: ShadowCollectionData;
+interface ICollectionCardProps {
+  index: number;
+  style: React.CSSProperties;
 }
 
-const ShadowCollectionCard: React.FC<IShadowCollectionCardProps> = (props) => {
-  const { shadow } = props;
+const CollectionCard: React.FC<ICollectionCardProps> = (props) => {
+  const { index, style } = props;
 
   return (
     <motion.div
@@ -27,14 +27,14 @@ const ShadowCollectionCard: React.FC<IShadowCollectionCardProps> = (props) => {
       whileHover="hover"
       transition={{
         duration: 0.15,
-        delay: Number(shadow.id) * 0.1,
+        delay: index * 0.1,
         staggerChildren: 0.15,
       }}
       className="relative m-4 bg-white rounded-lg border border-gray-200 h-[200px]"
-      style={{ boxShadow: shadow.shadowStyle }}
+      style={style}
     >
       <div className="absolute items-center bottom-0 flex justify-between w-full p-2">
-        <span className="font-bold text-gray-900 opacity-80">{`#${shadow.id}`}</span>
+        <span className="font-bold text-gray-900 opacity-80">{`#${index}`}</span>
         <Button size="sm">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -56,4 +56,4 @@ const ShadowCollectionCard: React.FC<IShadowCollectionCardProps> = (props) => {
   );
 };
 
-export default ShadowCollectionCard;
+export default CollectionCard;

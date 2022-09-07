@@ -1,6 +1,6 @@
-import { ShadowCollectionData } from '../types/shadow-collection.types';
+import { ShadowCollectionEntry } from '../types/shadow-collection.types';
 
-export const SHADOW_COLLECTION: ShadowCollectionData[] = [
+export const SHADOW_COLLECTION: ShadowCollectionEntry[] = [
   {
     id: '1',
     shadowStyle: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',

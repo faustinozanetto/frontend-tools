@@ -4,10 +4,10 @@ import React from 'react';
 import GradientGeneratorColorEntry from './gradient-generator-color-entry';
 
 const GradientGeneratorColorEdit: React.FC = () => {
-  const { gradient, addColor } = useGradientGeneratorContext();
+  const { gradient, addColor, updateColor } = useGradientGeneratorContext();
 
   const handleColorAdd = () => {
-    addColor({ color: '#0000B9', position: 0 });
+    addColor({ color: '#0000B9', position: 10 });
   };
 
   return (
@@ -29,7 +29,16 @@ const GradientGeneratorColorEdit: React.FC = () => {
       </div>
       <div className="flex flex-row justify-center items-center">
         {gradient.colors.map((color, index) => {
-          return <GradientGeneratorColorEntry key={index} index={index} color={color} />;
+          return (
+            <GradientGeneratorColorEntry
+              key={index}
+              index={index}
+              color={color}
+              onColorChange={(newColor) => {
+                updateColor(index, { ...color, color: newColor });
+              }}
+            />
+          );
         })}
       </div>
     </div>

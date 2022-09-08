@@ -1,9 +1,11 @@
 import { Disclosure, Transition } from '@headlessui/react';
 import clsx from 'clsx';
 import React, { useEffect } from 'react';
+
 import useShadowCreator from '../../hooks/use-shadow-creator';
 import useShadowGeneratorContext from '../../hooks/use-shadow-generator-context';
-import { defaultShadow, ShadowData } from '../../types/shadow-generator.types';
+import type { ShadowData } from '../../types/shadow-generator.types';
+import { defaultShadow } from '../../types/shadow-generator.types';
 import {
   MAX_BLUR_RADIUS,
   MAX_H_OFFSET,
@@ -68,7 +70,7 @@ const ShadowGeneratorEntry: React.FC<IShadowGeneratorEntryProps> = (props) => {
     <Disclosure>
       {({ open }) => (
         <>
-          <Disclosure.Button className="flex w-full justify-between focus:outline-none text-violet-800 bg-violet-200 hover:bg-violet-300 font-semibold rounded-lg px-5 py-2.5 ">
+          <Disclosure.Button className="flex w-full justify-between rounded-lg bg-violet-200 px-5 py-2.5 font-semibold text-violet-800 hover:bg-violet-300 focus:outline-none ">
             Shadow
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +78,7 @@ const ShadowGeneratorEntry: React.FC<IShadowGeneratorEntryProps> = (props) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className={clsx('w-6 h-6', open ? 'rotate-90 transform' : '')}
+              className={clsx('h-6 w-6', open ? 'rotate-90' : '')}
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
@@ -90,7 +92,7 @@ const ShadowGeneratorEntry: React.FC<IShadowGeneratorEntryProps> = (props) => {
             leaveTo="transform scale-95 opacity-0"
           >
             <Disclosure.Panel>
-              <div className="flex flex-col items-start space-y-2 justify-between p-2 sm:p-4 sm:space-x-4 sm:flex-row">
+              <div className="flex flex-col items-start justify-between space-y-2 p-2 sm:flex-row sm:space-x-4 sm:p-4">
                 {/* Color */}
                 <div className="w-full">
                   <ShadowColorEdit defaultValue={shadow.color} onChange={handleColorChange} />
@@ -131,7 +133,7 @@ const ShadowGeneratorEntry: React.FC<IShadowGeneratorEntryProps> = (props) => {
                     onChange={handleSpreadRadiusChange}
                   />
 
-                  <div className="flex items-center justify-between w-full">
+                  <div className="flex w-full items-center justify-between">
                     {/* Inset */}
                     <ShadowBooleanEdit label="Is Inset?" defaultValue={shadow.inset} onChange={handleInsetChange} />
                     {/* Delete Button */}

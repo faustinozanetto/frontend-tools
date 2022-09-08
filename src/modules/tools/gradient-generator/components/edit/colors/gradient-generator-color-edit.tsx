@@ -1,6 +1,7 @@
 import useGradientGeneratorContext from '@modules/tools/gradient-generator/hooks/use-gradient-generator-context';
 import Button from '@modules/ui/components/button/button';
 import React from 'react';
+
 import GradientGeneratorColorEntry from './gradient-generator-color-entry';
 
 const GradientGeneratorColorEdit: React.FC = () => {
@@ -11,8 +12,8 @@ const GradientGeneratorColorEdit: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col w-full">
-      <div className="flex flex-row items-center mb-2 justify-between">
+    <div className="flex w-full flex-col">
+      <div className="mb-2 flex flex-row items-center justify-between">
         <h3 className="text-lg font-semibold text-gray-800">Colors</h3>
         <Button size="sm" onClick={() => handleColorAdd()}>
           <svg
@@ -21,13 +22,13 @@ const GradientGeneratorColorEdit: React.FC = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="h-6 w-6"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
           </svg>
         </Button>
       </div>
-      <div className="flex flex-row justify-center items-center">
+      <div className="flex flex-row items-center justify-center">
         {gradient.colors.map((color, index) => {
           return (
             <GradientGeneratorColorEntry

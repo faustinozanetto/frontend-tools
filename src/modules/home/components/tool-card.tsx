@@ -19,7 +19,7 @@ const ToolCard: React.FC<IToolCardProps> = (props) => {
   const { tool } = props;
 
   return (
-    <div className="flex flex-col space-y-2 relative w-full p-4 justify-between bg-gray-100 rounded-md">
+    <div className="relative flex w-full flex-col justify-between space-y-2 rounded-md bg-gray-100 p-4">
       {/* Name */}
       <h3 className="text-2xl font-bold tracking-tight text-gray-900">{tool.name}</h3>
       {/* Description */}

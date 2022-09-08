@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en" className="scroll-smooth">
         <Head />
-        <body className="antialiased text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900">
+        <body className="bg-white text-slate-500 antialiased dark:bg-slate-900 dark:text-slate-400">
           <Main />
           <NextScript />
         </body>

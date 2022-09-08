@@ -1,5 +1,7 @@
 import { useContext } from 'react';
-import { GradientGeneratorContext, IGradientGeneratorContextProps } from '../context/gradient-generator-context';
+
+import type { IGradientGeneratorContextProps } from '../context/gradient-generator-context';
+import { GradientGeneratorContext } from '../context/gradient-generator-context';
 
 const useGradientGeneratorContext = () => {
   return useContext<IGradientGeneratorContextProps>(GradientGeneratorContext);

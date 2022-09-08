@@ -1,4 +1,5 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import React, { useEffect, useState } from 'react';
 import useDebounce from 'src/hooks/use-debounce';
 
 interface IShadowBooleanEditProps {
@@ -21,7 +22,7 @@ const ShadowBooleanEdit: React.FC<IShadowBooleanEditProps> = (props) => {
   }, [debouncedValue]);
 
   return (
-    <div className="flex flex-row justify-between items-center space-x-2">
+    <div className="flex flex-row items-center justify-between space-x-2">
       <label htmlFor={label} className="font-semibold text-gray-800">
         {label}
       </label>
@@ -30,7 +31,7 @@ const ShadowBooleanEdit: React.FC<IShadowBooleanEditProps> = (props) => {
         type="checkbox"
         defaultChecked={defaultValue}
         onChange={handleSliderChange}
-        className="w-4 h-4 text-purple-600 bg-gray-100 rounded-lg border-gray-300"
+        className="h-4 w-4 rounded-lg border-gray-300 bg-gray-100 text-purple-600"
       />
     </div>
   );

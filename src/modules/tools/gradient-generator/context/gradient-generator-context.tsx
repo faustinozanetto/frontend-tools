@@ -1,6 +1,7 @@
-import React, { useMemo } from 'react';
-import { createContext, useState } from 'react';
-import { GradientColor, GradientData, GradientType } from '../types/gradient-generator.types';
+import React, { createContext, useMemo, useState } from 'react';
+
+import type { GradientColor, GradientData } from '../types/gradient-generator.types';
+import { GradientType } from '../types/gradient-generator.types';
 
 export interface IGradientGeneratorContextProps {
   /** Gradient Data */

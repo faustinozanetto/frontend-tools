@@ -1,9 +1,9 @@
+import useGradientColorStopsEditor from '@modules/tools/gradient-generator/hooks/use-gradient-color-stops-editor';
 import useGradientGenerator from '@modules/tools/gradient-generator/hooks/use-gradient-generator';
 import useGradientGeneratorContext from '@modules/tools/gradient-generator/hooks/use-gradient-generator-context';
-import Draggable from 'react-draggable';
+import type { GradientColor } from '@modules/tools/gradient-generator/types/gradient-generator.types';
 import React, { useRef } from 'react';
-import useGradientColorStopsEditor from '@modules/tools/gradient-generator/hooks/use-gradient-color-stops-editor';
-import { GradientColor } from '@modules/tools/gradient-generator/types/gradient-generator.types';
+import Draggable from 'react-draggable';
 
 interface IGradientColorHandleProps {
   /** Offset parent to pass to the draggable component. */
@@ -35,9 +35,9 @@ const GradientColorHandle: React.FC<IGradientColorHandleProps> = (props) => {
         onDrag(xPos);
       }}
     >
-      <div className="absolute z-10 px-[2px] top-2">
+      <div className="absolute top-2 z-10 px-[2px]">
         <div
-          className="flex w-6 h-6 rounded-2xl items-center justify-center border-4"
+          className="flex h-6 w-6 items-center justify-center rounded-2xl border-4"
           style={{ background: color.color }}
         />
       </div>
@@ -52,7 +52,7 @@ const GradientGeneratorColorStopsEdit: React.FC = () => {
   const { updateSelectedColorStopIndex, updateSelectedColorStop } = useGradientColorStopsEditor();
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex w-full flex-col">
       <h3 className="text-lg font-semibold text-gray-800">Colors Stops</h3>
       <div className="flex flex-col items-center">
         <div className="relative w-[340px]">

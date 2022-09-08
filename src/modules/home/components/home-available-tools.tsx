@@ -1,5 +1,7 @@
 import React from 'react';
-import ToolCard, { ToolData } from './tool-card';
+
+import type { ToolData } from './tool-card';
+import ToolCard from './tool-card';
 
 const TOOLS: ToolData[] = [
   {
@@ -26,16 +28,16 @@ const TOOLS: ToolData[] = [
 
 const HomeAvailableTools: React.FC = () => {
   return (
-    <div className="flex flex-col items-start justify-center w-full h-full">
-      <div className="block mb-2 sm:mb-4">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200">
+    <div className="flex h-full w-full flex-col items-start justify-center">
+      <div className="mb-2 block sm:mb-4">
+        <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200 sm:text-5xl">
           Available Tools
         </h2>
       </div>
 
       {/* Tools */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        {TOOLS.map((tool, index) => {
+        {TOOLS.map((tool) => {
           return <ToolCard key={tool.name} tool={tool} />;
         })}
       </div>

@@ -1,7 +1,6 @@
-import React from 'react';
-
 import Layout from '@modules/common/layout/components/layout';
 import HomeView from '@views/home/home-view';
+import React from 'react';
 
 const HomePage: React.FC = () => {
   return (

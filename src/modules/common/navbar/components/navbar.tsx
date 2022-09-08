@@ -2,16 +2,16 @@ import React from 'react';
 
 const Navbar: React.FC = () => {
   return (
-    <div className="sticky top-0 z-40 w-full flex-none  dark:border-slate-50/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-slate-900/75">
-      <div className="max-w-8xl mx-auto">
-        <div className="py-4 lg:px-8 mx-4 lg:mx-0">
+    <div className="supports-backdrop-blur:bg-white/95 sticky top-0 z-40 w-full  flex-none bg-white dark:border-slate-50/[0.06] dark:bg-slate-900/75">
+      <div className="mx-auto max-w-8xl">
+        <div className="mx-4 py-4 lg:mx-0 lg:px-8">
           <div className="relative flex items-center">
             {/* Logo */}
             <div className="mr-3 flex-none overflow-hidden md:w-auto">
-              <span className="font-bold text-3xl text-violet-600">Frontend Tools T</span>
+              <span className="text-3xl font-bold text-violet-600">Frontend Tools T</span>
             </div>
             {/* Links */}
-            <div className="relative hidden lg:flex items-center ml-auto"></div>
+            <div className="relative ml-auto hidden items-center lg:flex"></div>
           </div>
         </div>
       </div>

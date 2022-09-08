@@ -1,6 +1,7 @@
-import React, { useMemo } from 'react';
-import { createContext, useState } from 'react';
-import { defaultShadow, ShadowData } from '../types/shadow-generator.types';
+import React, { createContext, useMemo, useState } from 'react';
+
+import type { ShadowData } from '../types/shadow-generator.types';
+import { defaultShadow } from '../types/shadow-generator.types';
 
 export interface IShadowGeneratorContextProps {
   shadows: ShadowData[];

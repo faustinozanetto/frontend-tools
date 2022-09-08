@@ -1,4 +1,4 @@
-import { LatestNewsData } from '../types/home.types';
+import type { LatestNewsData } from '../types/home.types';
 
 export const LATEST_NEWS: LatestNewsData[] = [
   {

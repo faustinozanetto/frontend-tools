@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from 'react';
-import { ShadowData } from '../types/shadow-generator.types';
+import { useMemo } from 'react';
+
+import type { ShadowData } from '../types/shadow-generator.types';
 
 const useShadowResults = (shadows: ShadowData[]) => {
   const generateShadowStyles = (): string => {
@@ -13,9 +14,7 @@ const useShadowResults = (shadows: ShadowData[]) => {
       const spreadRadius: string = shadow.spreadRadius ? `${shadow.spreadRadius}px` : '';
       const color: string = shadow.color ? shadow.color : '';
       const separator: string = index >= 0 && index < shadows.length - 1 ? ',' : '';
-      return (
-        inset + ' ' + xOffset + ' ' + yOffset + ' ' + blurRadius + ' ' + spreadRadius + ' ' + color + ' ' + separator
-      );
+      return `${inset} ${xOffset} ${yOffset} ${blurRadius} ${spreadRadius} ${color} ${separator}`;
     });
     return genereatedShadows.join('').trim();
   };

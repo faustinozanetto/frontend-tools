@@ -1,4 +1,4 @@
-import { ShadowCollectionEntry } from '../types/shadow-collection.types';
+import type { ShadowCollectionEntry } from '../types/shadow-collection.types';
 
 export const SHADOW_COLLECTION: ShadowCollectionEntry[] = [
   {

@@ -1,8 +1,5 @@
 import useGradientGeneratorContext from '@modules/tools/gradient-generator/hooks/use-gradient-generator-context';
-import Button from '@modules/ui/components/button/button';
-import { Listbox, Transition } from '@headlessui/react';
-import React, { Fragment, useEffect, useState } from 'react';
-import { GradientType } from '@modules/tools/gradient-generator/types/gradient-generator.types';
+import React, { useEffect, useState } from 'react';
 
 const GradientGeneratorRotationEdit: React.FC = () => {
   const { gradient, setRadialRotation } = useGradientGeneratorContext();
@@ -17,7 +14,7 @@ const GradientGeneratorRotationEdit: React.FC = () => {
   }, [rotation]);
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex w-full flex-col">
       <div className="flex flex-row justify-between">
         <label htmlFor="gradient-rotation" className="font-semibold text-gray-800">
           Rotation
@@ -31,7 +28,7 @@ const GradientGeneratorRotationEdit: React.FC = () => {
         value={rotation}
         min={0}
         max={360}
-        className="w-full bg-gray-200 rounded-lg appearance-none cursor-pointer"
+        className="w-full cursor-pointer appearance-none rounded-lg bg-gray-200"
       />
     </div>
   );

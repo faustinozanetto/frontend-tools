@@ -1,5 +1,7 @@
 import { useContext } from 'react';
-import { IShadowGeneratorContextProps, ShadowGeneratorContext } from '../context/shadow-generator-context';
+
+import type { IShadowGeneratorContextProps } from '../context/shadow-generator-context';
+import { ShadowGeneratorContext } from '../context/shadow-generator-context';
 
 const useShadowGeneratorContext = () => {
   return useContext<IShadowGeneratorContextProps>(ShadowGeneratorContext);

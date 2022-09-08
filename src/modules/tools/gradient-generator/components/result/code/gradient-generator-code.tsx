@@ -10,13 +10,13 @@ interface IGradientGeneratorResultCodeProps {
 const GradientGeneratorResultCode: React.FC<IGradientGeneratorResultCodeProps> = (props) => {
   const { gradientStyle } = props;
 
-  const handleCodeCopy = (event: React.MouseEvent<HTMLButtonElement>): void => {
+  const handleCodeCopy = (_event: React.MouseEvent<HTMLButtonElement>): void => {
     // TODO: implement
   };
 
   return (
-    <div className="flex flex-col bg-gray-100 p-4 rounded-lg space-y-2 sm:space-y-4">
-      <div className="flex flex-row justify-between items-center">
+    <div className="flex flex-col space-y-2 rounded-lg bg-gray-100 p-4 sm:space-y-4">
+      <div className="flex flex-row items-center justify-between">
         <h2 className="text-2xl font-bold text-gray-900">Code Snippet</h2>
         <Button size="sm" onClick={handleCodeCopy}>
           <svg
@@ -25,7 +25,7 @@ const GradientGeneratorResultCode: React.FC<IGradientGeneratorResultCodeProps> =
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="h-6 w-6"
           >
             <path
               strokeLinecap="round"
@@ -36,7 +36,7 @@ const GradientGeneratorResultCode: React.FC<IGradientGeneratorResultCodeProps> =
         </Button>
       </div>
       {/* Container */}
-      <div className="flex justify-center items-center">
+      <div className="flex items-center justify-center">
         <SyntaxHighlighter
           language="css"
           style={shadesOfPurple}

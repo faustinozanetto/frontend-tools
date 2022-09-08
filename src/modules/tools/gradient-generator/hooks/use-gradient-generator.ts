@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import { GradientData, GradientType } from '../types/gradient-generator.types';
+
+import type { GradientData } from '../types/gradient-generator.types';
+import { GradientType } from '../types/gradient-generator.types';
 
 /**
  * Gradient Generator Hook
@@ -34,7 +36,7 @@ const useGradientGenerator = (gradient: GradientData, withRotation: boolean) => 
     }
 
     // Parse all the colors.
-    const parsedColors = gradient.colors.map((color, index) => {
+    const parsedColors = gradient.colors.map((color) => {
       return ` ${color.color} ${color.position}%`;
     });
 

@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react';
 import dynamic from 'next/dynamic';
+import React, { Suspense } from 'react';
 
 const GradientGenerator = dynamic(() => import('@modules/tools/gradient-generator/components/gradient-generator'), {
   suspense: true,
@@ -9,7 +9,7 @@ const GradientGeneratorView: React.FC = () => {
   const gradientGeneratorFallback = (): React.ReactNode => {
     return (
       <div className="flex items-center justify-center">
-        <span className="font-bold text-2xl text-gray-800">Loading...</span>
+        <span className="text-2xl font-bold text-gray-800">Loading...</span>
       </div>
     );
   };
@@ -18,10 +18,10 @@ const GradientGeneratorView: React.FC = () => {
     <div className="flex flex-col space-y-4 sm:space-y-6">
       {/* Heading */}
       <div className="block space-y-2 sm:space-y-4">
-        <h1 className="text-5xl sm:text-6xl leading-none font-extrabold text-slate-900 tracking-tight dark:text-slate-200">
+        <h1 className="text-5xl font-extrabold leading-none tracking-tight text-slate-900 dark:text-slate-200 sm:text-6xl">
           Gradient Generator
         </h1>
-        <p className="text-xl sm:text-2xl font-normal text-slate-900">
+        <p className="text-xl font-normal text-slate-900 sm:text-2xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis error consequatur sapiente! Similique, quo.
           Similique.
         </p>

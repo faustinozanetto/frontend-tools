@@ -1,4 +1,5 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import React, { useEffect, useState } from 'react';
 import useDebounce from 'src/hooks/use-debounce';
 
 interface IShadowRangeEditProps {
@@ -37,7 +38,7 @@ const ShadowRangeEdit: React.FC<IShadowRangeEditProps> = (props) => {
         value={value}
         min={min}
         max={max}
-        className="w-full bg-gray-200 rounded-lg appearance-none cursor-pointer"
+        className="w-full cursor-pointer appearance-none rounded-lg bg-gray-200"
       />
     </React.Fragment>
   );

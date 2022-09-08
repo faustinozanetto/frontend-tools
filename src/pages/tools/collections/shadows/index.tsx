@@ -1,7 +1,6 @@
-import React from 'react';
-
 import Layout from '@modules/common/layout/components/layout';
 import ShadowCollectionView from '@views/tools/collections/shadow-collection-view';
+import React from 'react';
 
 const ShadowCollectionPage: React.FC = () => {
   return (

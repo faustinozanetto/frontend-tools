@@ -1,4 +1,5 @@
 import React from 'react';
+
 import useGradientGenerator from '../../hooks/use-gradient-generator';
 import useGradientGeneratorContext from '../../hooks/use-gradient-generator-context';
 import GradientGeneratorResultCode from './code/gradient-generator-code';

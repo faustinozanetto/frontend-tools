@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import useGradientGeneratorContext from './use-gradient-generator-context';
 
 const useGradientColorStopsEditor = () => {

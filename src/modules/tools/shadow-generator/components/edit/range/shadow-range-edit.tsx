@@ -3,10 +3,15 @@ import React, { useEffect, useState } from 'react';
 import useDebounce from 'src/hooks/use-debounce';
 
 interface IShadowRangeEditProps {
+  /** Label to display */
   label: string;
+  /** Default value of the slider */
   defaultValue: number;
+  /** Min value */
   min: number;
+  /** Max value */
   max: number;
+  /** Callback when the state changes */
   onChange: (value: number) => void;
 }
 

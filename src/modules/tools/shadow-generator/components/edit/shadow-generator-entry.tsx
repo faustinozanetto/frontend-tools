@@ -22,6 +22,7 @@ import ShadowRangeEdit from './range/shadow-range-edit';
 import ShadowGeneratorDelete from './shadow-generator-delete';
 
 interface IShadowGeneratorEntryProps {
+  /** Shadow id asociated  */
   shadowId: ShadowData['id'];
 }
 

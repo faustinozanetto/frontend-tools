@@ -4,6 +4,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { shadesOfPurple } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 interface IShadowGeneratorResultCodeProps {
+  /** CSS shadow style */
   shadowStyle: string;
 }
 

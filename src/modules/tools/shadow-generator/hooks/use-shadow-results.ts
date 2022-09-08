@@ -2,6 +2,11 @@ import { useMemo } from 'react';
 
 import type { ShadowData } from '../types/shadow-generator.types';
 
+/**
+ * Use shadow results hook. Generates the css style for the shadow
+ * @param shadows The shadow parameter to base the style.
+ * @returns
+ */
 const useShadowResults = (shadows: ShadowData[]) => {
   const generateShadowStyles = (): string => {
     // Shadow CSS Format.

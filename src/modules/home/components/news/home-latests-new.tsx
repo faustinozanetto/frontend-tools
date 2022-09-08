@@ -2,6 +2,7 @@ import type { LatestNewsData } from '@modules/home/types/home.types';
 import React from 'react';
 
 interface IHomeLatestsNewProps {
+  /** News data to fill content. */
   latestNew: LatestNewsData;
 }
 

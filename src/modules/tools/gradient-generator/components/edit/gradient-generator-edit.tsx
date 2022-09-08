@@ -6,7 +6,6 @@ import GradientGeneratorRotationEdit from './rotation/gradient-generator-rotatio
 import GradientGeneratorTypeEdit from './type/gradient-generator-type-edit';
 
 const GradientGeneratorEdit: React.FC = () => {
-
   return (
     <div className="flex flex-col space-y-2 rounded-lg bg-gray-100 p-4 sm:space-y-4">
       <div className="flex flex-row items-center justify-between">

@@ -1,10 +1,17 @@
 export type ShadowData = {
+  /** Shadow id */
   id: string;
+  /** Shadow horizontal offset */
   horizontalOffset: number;
+  /** Shadow vertical offset */
   verticalOffset: number;
+  /** Shadow blur radius */
   blurRadius: number;
+  /** Shadow spread radius */
   spreadRadius: number;
+  /** Shadow inset */
   inset: boolean;
+  /** Shadow color */
   color: string;
 };
 

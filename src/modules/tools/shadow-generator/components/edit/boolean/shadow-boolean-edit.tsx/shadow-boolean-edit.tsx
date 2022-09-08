@@ -3,8 +3,11 @@ import React, { useEffect, useState } from 'react';
 import useDebounce from 'src/hooks/use-debounce';
 
 interface IShadowBooleanEditProps {
+  /** Label to display */
   label: string;
+  /** Default value of the checkbox */
   defaultValue: boolean;
+  /** Callback to when the state changes */
   onChange: (value: boolean) => void;
 }
 

@@ -3,7 +3,9 @@ import React, { useMemo } from 'react';
 
 type IButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children?: React.ReactNode;
+  /** Button size variants */
   size?: 'sm' | 'md' | 'lg';
+  /** Additional button styles */
   style?: React.CSSProperties;
 };
 

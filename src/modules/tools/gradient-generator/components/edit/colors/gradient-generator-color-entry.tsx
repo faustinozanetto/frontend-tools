@@ -5,8 +5,11 @@ import { HslStringColorPicker } from 'react-colorful';
 import useOnClickOutside from 'src/hooks/use-click-outside';
 
 interface IGradieentGeneratorColorEntryProps {
+  /** Index used in the tooltip positioning */
   index: number;
+  /** Gradient color data to use. */
   color: GradientColor;
+  /** Callback used when the color changes */
   onColorChange: (newColor: string) => void;
 }
 

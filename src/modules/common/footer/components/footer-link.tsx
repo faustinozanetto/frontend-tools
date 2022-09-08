@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 
 interface IFooterLinkProps {
+  /** Href to navigate to when interacted */
   href: string;
   children?: React.ReactNode;
 }

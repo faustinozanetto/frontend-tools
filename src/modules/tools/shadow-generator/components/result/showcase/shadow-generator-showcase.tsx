@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface IShadowGeneratorShowcaseProps {
+  /** CSS shadow style */
   shadowStyle: string;
 }
 

@@ -3,7 +3,9 @@ import { HslaStringColorPicker } from 'react-colorful';
 import useDebounce from 'src/hooks/use-debounce';
 
 interface IShadowColorEditProps {
+  /** Default value to show */
   defaultValue: string;
+  /** Callback when state changes */
   onChange: (value: string) => void;
 }
 

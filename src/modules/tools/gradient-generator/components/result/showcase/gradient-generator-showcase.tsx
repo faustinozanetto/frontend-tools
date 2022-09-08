@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface IGradientGeneratorShowcaseProps {
+  /** Gradient css style */
   gradientStyle: string;
 }
 

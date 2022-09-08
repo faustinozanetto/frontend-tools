@@ -31,8 +31,15 @@ const useGradientGenerator = (gradient: GradientData, withRotation: boolean) => 
         firstParam = 'circle';
         break;
       }
-      case GradientType.CONIC:
+      case GradientType.CONIC: {
         type = 'conic-gradient';
+        break;
+      }
+      default: {
+        type = 'linear-gradient';
+        firstParam = `${gradient.radialRotation}deg`;
+        break;
+      }
     }
 
     // Parse all the colors.

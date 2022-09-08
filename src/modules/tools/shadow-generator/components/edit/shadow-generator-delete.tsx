@@ -6,6 +6,7 @@ import { ShadowGeneratorContext } from '../../context/shadow-generator-context';
 import type { ShadowData } from '../../types/shadow-generator.types';
 
 interface IShadowGeneratorDeleteProps {
+  /** Shadow id to delete */
   shadowId: ShadowData['id'];
 }
 

@@ -3,8 +3,10 @@ import { motion } from 'framer-motion';
 import React from 'react';
 
 interface ICollectionCardProps {
+  /** Index used in animation orchestration */
   index: number;
-  style: React.CSSProperties;
+  /** Additional styles */
+  style?: React.CSSProperties;
 }
 
 const CollectionCard: React.FC<ICollectionCardProps> = (props) => {

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { ShadowData } from '../types/shadow-generator.types';
+
+import type { ShadowData } from '../types/shadow-generator.types';
 import {
   MAX_BLUR_RADIUS,
   MAX_H_OFFSET,

@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
 import clsx from 'clsx';
+import React, { useMemo } from 'react';
 
 type IButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children?: React.ReactNode;
@@ -18,12 +18,14 @@ const Button = React.forwardRef<HTMLButtonElement, IButtonProps>((props, ref) =>
         return 'px-5 py-2.5 text-base';
       case 'lg':
         return 'px-6 py-3.5 text-lg';
+      default:
+        return 'py-2 px-3 text-sm';
     }
   };
 
   const constructButtonClasses = useMemo(() => {
     return clsx(
-      'focus:outline-none text-violet-800 bg-violet-200 hover:bg-violet-300 focus:ring-4 focus:ring-violet-300 font-semibold rounded-lg',
+      'rounded-lg bg-violet-200 font-semibold text-violet-800 hover:bg-violet-300 focus:outline-none focus:ring-4 focus:ring-violet-300',
       getButtonSizeVariants()
     );
   }, []);

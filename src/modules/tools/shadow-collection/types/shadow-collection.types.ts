@@ -1,4 +1,4 @@
-export type ShadowCollectionData = {
+export type ShadowCollectionEntry = {
   id: string;
   shadowStyle: string;
 };

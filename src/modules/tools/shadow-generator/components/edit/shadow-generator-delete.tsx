@@ -1,7 +1,9 @@
 import Button from '@modules/ui/components/button/button';
 import React, { useContext } from 'react';
-import { IShadowGeneratorContextProps, ShadowGeneratorContext } from '../../context/shadow-generator-context';
-import { ShadowData } from '../../types/shadow-generator.types';
+
+import type { IShadowGeneratorContextProps } from '../../context/shadow-generator-context';
+import { ShadowGeneratorContext } from '../../context/shadow-generator-context';
+import type { ShadowData } from '../../types/shadow-generator.types';
 
 interface IShadowGeneratorDeleteProps {
   shadowId: ShadowData['id'];
@@ -23,7 +25,7 @@ const ShadowGeneratorDelete: React.FC<IShadowGeneratorDeleteProps> = (props) => 
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className="h-6 w-6"
       >
         <path
           strokeLinecap="round"

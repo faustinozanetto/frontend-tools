@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-import-module-exports
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */

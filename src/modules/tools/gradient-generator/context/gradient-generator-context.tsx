@@ -6,6 +6,7 @@ export interface IGradientGeneratorContextProps {
   gradient: GradientData;
   setType: (type: GradientData['type']) => void;
   addColor: (color: GradientData['colors'][0]) => void;
+  updateColor: (index: number, color: GradientData['colors'][0]) => void;
   removeColor: (index: number) => void;
 }
 
@@ -18,6 +19,7 @@ const initialState: IGradientGeneratorContextProps = {
   },
   setType: (_type) => {},
   addColor: (_color) => {},
+  updateColor: (_index, _color) => {},
   removeColor: (_index) => {},
 };
 
@@ -39,6 +41,20 @@ const GradientGeneratorProvider: React.FC<IGradientGeneratorProviderProps> = ({ 
     setInternalGradient((prev) => ({ ...prev, colors: [...prev.colors, color] }));
   };
 
+  const updateColor = (index: number, color: GradientData['colors'][0]) => {
+    if (index >= 0 && index < internalGradient.colors.length) {
+      setInternalGradient((prev) => {
+        const updatedColors = prev.colors.map((c, i) => {
+          if (i === index) {
+            return color;
+          }
+          return c;
+        });
+        return { ...prev, colors: updatedColors };
+      });
+    }
+  };
+
   const removeColor = (index: number) => {
     if (index >= 0 && index < internalGradient.colors.length) {
       setInternalGradient((prev) => {
@@ -48,7 +64,10 @@ const GradientGeneratorProvider: React.FC<IGradientGeneratorProviderProps> = ({ 
     }
   };
 
-  const value = useMemo(() => ({ gradient: internalGradient, setType, addColor, removeColor }), [internalGradient]);
+  const value = useMemo(
+    () => ({ gradient: internalGradient, setType, addColor, updateColor, removeColor }),
+    [internalGradient]
+  );
 
   return <GradientGeneratorContext.Provider value={value}>{children}</GradientGeneratorContext.Provider>;
 };

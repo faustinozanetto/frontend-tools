@@ -1,6 +1,7 @@
 import useGradientGeneratorContext from '@modules/tools/gradient-generator/hooks/use-gradient-generator-context';
 import Button from '@modules/ui/components/button/button';
 import React from 'react';
+import GradientGeneratorColorEntry from './gradient-generator-color-entry';
 
 const GradientGeneratorColorEdit: React.FC = () => {
   const { gradient, addColor } = useGradientGeneratorContext();
@@ -27,8 +28,8 @@ const GradientGeneratorColorEdit: React.FC = () => {
         </Button>
       </div>
       <div className="flex flex-row justify-center items-center">
-        {gradient.colors.map((color) => {
-          return <div className="bg-gray-800 m-1 p-2 w-14 h-14 rounded-lg border-violet-600 border-[3px]"></div>;
+        {gradient.colors.map((color, index) => {
+          return <GradientGeneratorColorEntry key={index} index={index} color={color} />;
         })}
       </div>
     </div>

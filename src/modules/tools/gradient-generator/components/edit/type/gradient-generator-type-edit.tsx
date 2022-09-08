@@ -1,7 +1,6 @@
 import useGradientGeneratorContext from '@modules/tools/gradient-generator/hooks/use-gradient-generator-context';
 import Button from '@modules/ui/components/button/button';
-import { Listbox, Transition } from '@headlessui/react';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GradientType } from '@modules/tools/gradient-generator/types/gradient-generator.types';
 
 const GradientGeneratorTypeEdit: React.FC = () => {

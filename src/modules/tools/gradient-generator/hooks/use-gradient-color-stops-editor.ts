@@ -31,7 +31,7 @@ const useGradientColorStopsEditor = () => {
    */
   const updateSelectedColorStop = (color: string, position: number): void => {
     if (indexInRange(currentColorIndex)) {
-      updateColor(currentColorIndex, { color, position });
+      updateColor(currentColorIndex, { color, position: Number(position.toFixed(2)) });
     }
   };
 

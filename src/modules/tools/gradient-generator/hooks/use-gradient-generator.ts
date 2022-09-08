@@ -1,7 +1,20 @@
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { GradientData, GradientType } from '../types/gradient-generator.types';
 
-const useGradientGenerator = (gradient: GradientData) => {
+/**
+ * Gradient Generator Hook
+ * @param gradient Gradient data to feed the generator.
+ * @param withRotation Wether to use or not custom rotation.
+ * @returns The generated css styles.
+ */
+const useGradientGenerator = (gradient: GradientData, withRotation: boolean) => {
+  const [gradientStyle, setGradientStyle] = useState<string>('');
+
+  /**
+   * Generates the gradient css code using the gradient data prop.
+   * @param withRotation Wether to include a custom rotation or not.
+   * @returns The CSS generated gradient styles.
+   */
   const generateGradientCode = (): string => {
     let type: string = '';
     let firstParam: string = '';
@@ -25,12 +38,11 @@ const useGradientGenerator = (gradient: GradientData) => {
       return ` ${color.color} ${color.position}%`;
     });
 
-    return `${type}(${firstParam}, ${parsedColors})`;
+    return `${type}(${withRotation ? `${firstParam},` : '90deg,'} ${parsedColors})`;
   };
 
-  const gradientStyle = useMemo(() => {
-    const styles = generateGradientCode();
-    return styles;
+  useEffect(() => {
+    setGradientStyle(generateGradientCode());
   }, [gradient]);
 
   return { gradientStyle };

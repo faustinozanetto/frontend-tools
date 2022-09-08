@@ -2,6 +2,7 @@ import React from 'react';
 import useGradientGeneratorContext from '../../hooks/use-gradient-generator-context';
 import GradientGeneratorColorEdit from './colors/gradient-generator-color-edit';
 import GradientGeneratorColorStopsEdit from './colors/stops/gradient-generator-color-stops-edit';
+import GradientGeneratorRotationEdit from './rotation/gradient-generator-rotation-edit';
 import GradientGeneratorTypeEdit from './type/gradient-generator-type-edit';
 
 const GradientGeneratorEdit: React.FC = () => {
@@ -15,6 +16,7 @@ const GradientGeneratorEdit: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:space-x-4">
         <div className="flex flex-col w-full sm:w-1/2">
           <GradientGeneratorTypeEdit />
+          <GradientGeneratorRotationEdit />
         </div>
         {/* Colors */}
         <div className="flex flex-col w-full sm:w-1/2">

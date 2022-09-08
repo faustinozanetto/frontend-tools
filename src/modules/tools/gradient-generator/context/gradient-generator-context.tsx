@@ -19,11 +19,19 @@ export interface IGradientGeneratorContextProps {
    * Remove a color from the gradient
    */
   removeColor: (index: number) => void;
+  /**
+   * Updates the radial rotation of the gradient
+   */
+  setRadialRotation: (rotation: GradientData['radialRotation']) => void;
 }
 
 const initialState: IGradientGeneratorContextProps = {
   gradient: {
-    colors: [],
+    colors: [
+      { color: 'hsl(235, 93%, 46%)', position: 25 },
+      { color: 'hsl(183, 100%, 50%)', position: 50 },
+      { color: 'hsl(159, 92%, 45%)', position: 75 },
+    ],
     maxColors: 5,
     radialRotation: 90,
     type: GradientType.LINEAR,
@@ -32,6 +40,7 @@ const initialState: IGradientGeneratorContextProps = {
   addColor: (_color) => {},
   updateColor: (_index, _color) => {},
   removeColor: (_index) => {},
+  setRadialRotation: (_rotation) => {},
 };
 
 export const GradientGeneratorContext = createContext<IGradientGeneratorContextProps>(initialState);
@@ -93,8 +102,14 @@ const GradientGeneratorProvider: React.FC<IGradientGeneratorProviderProps> = ({ 
     }
   };
 
+  const setRadialRotation = (rotation: GradientData['radialRotation']): void => {
+    if (rotation >= 0 && rotation <= 360) {
+      setInternalGradient((prev) => ({ ...prev, radialRotation: rotation }));
+    }
+  };
+
   const value = useMemo(
-    () => ({ gradient: internalGradient, setType, addColor, updateColor, removeColor }),
+    () => ({ gradient: internalGradient, setType, addColor, updateColor, removeColor, setRadialRotation }),
     [internalGradient]
   );
 

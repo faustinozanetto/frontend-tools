@@ -16,7 +16,7 @@ const GradientGeneratorRotationEdit: React.FC = () => {
   return (
     <div className="flex w-full flex-col">
       <div className="flex flex-row justify-between">
-        <label htmlFor="gradient-rotation" className="font-semibold text-gray-800">
+        <label htmlFor="gradient-rotation" className="text-lg font-semibold text-gray-800">
           Rotation
         </label>
         <span className="text-sm">{rotation}deg</span>

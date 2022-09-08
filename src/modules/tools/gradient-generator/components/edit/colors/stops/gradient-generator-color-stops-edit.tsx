@@ -31,8 +31,7 @@ const GradientColorHandle: React.FC<IGradientColorHandleProps> = (props) => {
       onStart={onSelected}
       onDrag={(_e, position) => {
         const { x } = position;
-        const xPos = mapXPosition(x, 0, 340, 0, 100);
-        onDrag(xPos);
+        onDrag(mapXPosition(x, 0, 340, 0, 100));
       }}
     >
       <div className="absolute top-2 z-10 px-[2px]">

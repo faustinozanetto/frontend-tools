@@ -12,7 +12,7 @@ const GradientGeneratorEdit: React.FC = () => {
         <h3 className="text-2xl font-bold text-gray-900">Editor</h3>
       </div>
       <div className="flex flex-col sm:flex-row sm:space-x-4">
-        <div className="flex w-full flex-col sm:w-1/2">
+        <div className="mb-2 flex w-full flex-col sm:mb-0 sm:w-1/2">
           <GradientGeneratorTypeEdit />
           <GradientGeneratorRotationEdit />
         </div>

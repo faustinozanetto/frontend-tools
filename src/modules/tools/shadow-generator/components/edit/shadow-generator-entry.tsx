@@ -94,11 +94,6 @@ const ShadowGeneratorEntry: React.FC<IShadowGeneratorEntryProps> = (props) => {
           >
             <Disclosure.Panel>
               <div className="flex flex-col items-start justify-between space-y-2 p-2 sm:flex-row sm:space-x-4 sm:p-4">
-                {/* Color */}
-                <div className="w-full">
-                  <ShadowColorEdit defaultValue={shadow.color} onChange={handleColorChange} />
-                </div>
-
                 {/* Others */}
                 <div className="w-full space-y-1">
                   {/* Vertical Offset */}
@@ -140,6 +135,10 @@ const ShadowGeneratorEntry: React.FC<IShadowGeneratorEntryProps> = (props) => {
                     {/* Delete Button */}
                     <ShadowGeneratorDelete shadowId={shadow.id} />
                   </div>
+                </div>{' '}
+                {/* Color */}
+                <div className="w-full">
+                  <ShadowColorEdit defaultValue={shadow.color} onChange={handleColorChange} />
                 </div>
               </div>
             </Disclosure.Panel>

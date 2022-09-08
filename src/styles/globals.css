@@ -5,3 +5,11 @@
 .color-picker .react-colorful {
   width: auto;
 }
+
+::-moz-selection {
+  background: rgb(196 181 253);
+}
+
+::selection {
+  background: rgb(196 181 253);
+}

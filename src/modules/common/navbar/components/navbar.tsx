@@ -1,20 +1,41 @@
+import Link from 'next/link';
 import React from 'react';
+
+import type { INavbarLinkProps } from './navbar-link';
+import NavbarLink from './navbar-link';
+
+const NAVBAR_LINKS: INavbarLinkProps[] = [
+  {
+    href: '/',
+    children: 'Home',
+  },
+  {
+    href: '/tools',
+    children: 'Tools',
+  },
+];
 
 const Navbar: React.FC = () => {
   return (
-    <div className="supports-backdrop-blur:bg-white/95 sticky top-0 z-40 w-full  flex-none bg-white dark:border-slate-50/[0.06] dark:bg-slate-900/75">
-      <div className="mx-auto max-w-8xl">
-        <div className="mx-4 py-4 lg:mx-0 lg:px-8">
-          <div className="relative flex items-center">
-            {/* Logo */}
-            <div className="mr-3 flex-none overflow-hidden md:w-auto">
-              <span className="text-3xl font-bold text-violet-600">Frontend Tools T</span>
-            </div>
-            {/* Links */}
-            <div className="relative ml-auto hidden items-center lg:flex"></div>
+    <div className="sticky top-0 z-50 w-full flex-none text-sm font-semibold leading-6 text-slate-900">
+      <nav className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+        <div className="relative flex items-center py-[2.125rem]">
+          {/* Logo */}
+          <Link href="/">
+            <span className="mr-auto flex-none text-3xl font-bold text-violet-500">Frontend Tools</span>
+          </Link>
+          {/* Content */}
+          <div className="hidden sm:space-x-4 lg:flex lg:items-center">
+            {NAVBAR_LINKS.map((link, index) => {
+              return (
+                <NavbarLink key={index} href={link.href}>
+                  {link.children}
+                </NavbarLink>
+              );
+            })}
           </div>
         </div>
-      </div>
+      </nav>
     </div>
   );
 };

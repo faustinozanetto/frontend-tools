@@ -12,7 +12,7 @@ interface IShadowColorEditProps {
 const ShadowColorEdit: React.FC<IShadowColorEditProps> = (props) => {
   const { defaultValue, onChange } = props;
   const [color, setColor] = useState<string>(defaultValue);
-  const debouncedColor = useDebounce<string>(color, 20);
+  const debouncedColor = useDebounce<string>(color, 5);
 
   const handleShadowColorUpdate = (newColor: string) => {
     setColor(newColor);

@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
           <h1 className="text-5xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200 sm:text-6xl">
             Frontend Tools
           </h1>
-          <p className="text-xl font-normal text-slate-900 sm:text-2xl">
+          <p className="text-lg font-normal text-slate-900 sm:text-xl md:text-2xl">
             Welcome to FrotendTools, the all in one place for the most commonly used tools in web development.
           </p>
         </div>

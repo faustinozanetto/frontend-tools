@@ -1,5 +1,5 @@
 import Button from '@modules/ui/components/button/button';
-import React, { useContext } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import type { IShadowGeneratorContextProps } from '../../context/shadow-generator-context';
@@ -9,12 +9,12 @@ import { defaultShadow } from '../../types/shadow-generator.types';
 const ShadowGeneratorAdd: React.FC = () => {
   const { addShadow } = useContext<IShadowGeneratorContextProps>(ShadowGeneratorContext);
 
-  const handleShadowAdd = () => {
+  const handleShadowAdd = useCallback(() => {
     addShadow({ ...defaultShadow, id: uuidv4() });
-  };
+  }, []);
 
   return (
-    <Button size="sm" onClick={() => handleShadowAdd()}>
+    <Button aria-label="shadow-add" size="sm" onClick={handleShadowAdd}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

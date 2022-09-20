@@ -11,7 +11,7 @@ const NavbarLink: React.FC<INavbarLinkProps> = (props) => {
 
   return (
     <Link href={href} passHref>
-      <span className="block cursor-pointer p-2 text-base font-semibold text-gray-800 hover:rounded-lg hover:bg-violet-200">
+      <span className="cursor-pointer rounded-lg py-2 px-3 text-sm font-semibold text-violet-800 hover:bg-violet-300 focus:outline-none focus:ring-4 focus:ring-violet-300">
         {children}
       </span>
     </Link>

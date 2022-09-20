@@ -1,4 +1,8 @@
 import useGradientGeneratorContext from '@modules/tools/gradient-generator/hooks/use-gradient-generator-context';
+import {
+  MAX_GRADIENT_ROTATION,
+  MIN_GRADIENT_ROTATION,
+} from '@modules/tools/gradient-generator/utils/gradient-generator-constants';
 import React, { useEffect, useState } from 'react';
 
 const GradientGeneratorRotationEdit: React.FC = () => {
@@ -26,8 +30,8 @@ const GradientGeneratorRotationEdit: React.FC = () => {
         type="range"
         onChange={handleRotationChange}
         value={rotation}
-        min={0}
-        max={360}
+        min={MIN_GRADIENT_ROTATION}
+        max={MAX_GRADIENT_ROTATION}
         className="w-full cursor-pointer appearance-none rounded-lg bg-gray-200"
       />
     </div>

@@ -36,7 +36,7 @@ const HomeAvailableTools: React.FC = () => {
       </div>
 
       {/* Tools */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {TOOLS.map((tool) => {
           return <ToolCard key={tool.name} tool={tool} />;
         })}

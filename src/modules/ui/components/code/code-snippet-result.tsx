@@ -3,13 +3,15 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { shadesOfPurple } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
-interface IShadowGeneratorResultCodeProps {
-  /** CSS shadow style */
-  shadowStyle: string;
+interface ICodeSnippetResultProps {
+  /** Code to display */
+  code: string;
+  /** Langue of the code, example: css | jsx */
+  language?: string;
 }
 
-const ShadowGeneratorResultCode: React.FC<IShadowGeneratorResultCodeProps> = (props) => {
-  const { shadowStyle } = props;
+const CodeSnippetResult: React.FC<ICodeSnippetResultProps> = (props) => {
+  const { code, language = 'css' } = props;
 
   const handleCodeCopy = (_event: React.MouseEvent<HTMLButtonElement>): void => {
     // TODO: implement
@@ -39,7 +41,7 @@ const ShadowGeneratorResultCode: React.FC<IShadowGeneratorResultCodeProps> = (pr
       {/* Container */}
       <div className="flex items-center justify-center">
         <SyntaxHighlighter
-          language="css"
+          language={language}
           style={shadesOfPurple}
           wrapLongLines
           customStyle={{
@@ -48,10 +50,12 @@ const ShadowGeneratorResultCode: React.FC<IShadowGeneratorResultCodeProps> = (pr
             width: '100%',
             borderRadius: '1rem',
           }}
-        >{`box-shadow: ${shadowStyle}`}</SyntaxHighlighter>
+        >
+          {code}
+        </SyntaxHighlighter>
       </div>
     </div>
   );
 };
 
-export default ShadowGeneratorResultCode;
+export default CodeSnippetResult;

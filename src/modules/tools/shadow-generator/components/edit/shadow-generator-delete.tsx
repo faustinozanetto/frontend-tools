@@ -1,5 +1,5 @@
 import Button from '@modules/ui/components/button/button';
-import React, { useContext } from 'react';
+import React, { useCallback, useContext } from 'react';
 
 import type { IShadowGeneratorContextProps } from '../../context/shadow-generator-context';
 import { ShadowGeneratorContext } from '../../context/shadow-generator-context';
@@ -14,12 +14,12 @@ const ShadowGeneratorDelete: React.FC<IShadowGeneratorDeleteProps> = (props) => 
   const { shadowId } = props;
   const { removeShadow } = useContext<IShadowGeneratorContextProps>(ShadowGeneratorContext);
 
-  const handleRemoveShadow = () => {
+  const handleRemoveShadow = useCallback(() => {
     removeShadow(shadowId);
-  };
+  }, []);
 
   return (
-    <Button size="sm" onClick={() => handleRemoveShadow()}>
+    <Button aria-label="shadow-delete" size="sm" onClick={handleRemoveShadow}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
